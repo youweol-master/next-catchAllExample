@@ -10,12 +10,17 @@ export const metadata = {
 
 export default function RootLayout({
   children,
+  slot
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
+  slot: React.ReactNode
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="bg-blue-400">{ slot }</div>
+        <div className="bg-yellow-400">{ children }</div>
+      </body>
     </html>
   )
 }
